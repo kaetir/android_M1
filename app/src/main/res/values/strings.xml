@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WLTwitter_Part1</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <!-- MENU -->
+    <string name="action_logout">Logout</string>
+
+    <!-- LOGIN -->
+    <string name="loginHint">Your Twitter login</string>
+    <string name="passwordHint">Your Twitter password</string>
+    <string name="login">Sign in</string>
+    <string name="error_no_login">Empty login !</string>
+    <string name="error_no_password">Empty password !</string>
+    <string name="action_settings">Menu</string>
+
+    <string name="Name">Name : John</string>
+    <string name="Age">Age : 42 ans</string>
+    <string name="CityOfBirth">City of birth : NYC</string>
+    <string name="Status">Status : First Android training today !</string>
+    <string name="profil_picture">Photo de profile</string>
+    <string name="edit_profile">edit</string>
+</resources>

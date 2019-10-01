@@ -3,17 +3,30 @@ package worldline.ssm.rd.ux.wltwitter;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.app.FragmentManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import worldline.ssm.rd.ux.wltwitter.Interface.TweetListener;
+import worldline.ssm.rd.ux.wltwitter.fragments.TweetsFragment;
+import worldline.ssm.rd.ux.wltwitter.pojo.Tweet;
 import worldline.ssm.rd.ux.wltwitter.utils.PreferenceUtils;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements TweetListener {
+
+
+    @Override
+    public void onRetweet(Tweet t) {
+
+    }
+
+    @Override
+    public void onViewTweet(Tweet t) {
+        Toast.makeText(this, "onTextView"+ t.text, Toast.LENGTH_LONG).show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +36,24 @@ public class MainActivity extends Activity {
 
         final Intent intent = getIntent();
         if(intent != null){
-            String s = intent.getExtras().getString(WLTwitterLoginActivity.Login.EXTRA_LOGIN);
+            String login = intent.getExtras().getString(WLTwitterLoginActivity.Login.EXTRA_LOGIN);
             //Toast.makeText(this, "on a un intent", Toast.LENGTH_LONG);
-            getActionBar().setSubtitle(s);
+            getActionBar().setSubtitle(login);
+
 
         }
+        /*
+        if(savedInstanceState == null){
+            TweetsFragment tf = new TweetsFragment();
+            FragmentManager fm = getFragmentManager();
+
+            fm.beginTransaction().add(R.id.container, tf).commit();
+            Log.d("CA MARCHE ", "ou pas");
+        }
+
+*/
     }
+
 
 
     @Override

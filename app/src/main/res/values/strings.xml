@@ -3,7 +3,7 @@
 
     <string name="app_name">WLTwitter_Part1</string>
     <string name="hello_world">Hello world!</string>
-    
+
     <!-- MENU -->
     <string name="action_logout">Logout</string>
 
@@ -21,4 +21,7 @@
     <string name="Status">Status : First Android training today !</string>
     <string name="profil_picture">Photo de profile</string>
     <string name="edit_profile">edit</string>
+
+
+    <string name="tweets_fragments">tweets</string>
 </resources>

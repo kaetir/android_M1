@@ -18,4 +18,11 @@ public class WLTwitterApplication extends Application {
 	public static Context getContext() {
 		return sContext;
 	}
+
+
+
+
+
+
+
 }

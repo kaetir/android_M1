@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,7 +32,9 @@ public class MainActivity extends Activity implements TweetListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         //setContentView(R.layout.login);
+        setContentView(R.layout.activity_main);
 
 
         final Intent intent = getIntent();
@@ -42,16 +45,13 @@ public class MainActivity extends Activity implements TweetListener {
 
 
         }
-        /*
-        if(savedInstanceState == null){
-            TweetsFragment tf = new TweetsFragment();
-            FragmentManager fm = getFragmentManager();
 
-            fm.beginTransaction().add(R.id.container, tf).commit();
-            Log.d("CA MARCHE ", "ou pas");
+        if(savedInstanceState == null){
+            getFragmentManager().beginTransaction().add(R.id.container, new TweetsFragment()).commit();
+
         }
 
-*/
+
     }
 
 

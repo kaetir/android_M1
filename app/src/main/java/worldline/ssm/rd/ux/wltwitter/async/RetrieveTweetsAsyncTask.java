@@ -3,6 +3,7 @@ package worldline.ssm.rd.ux.wltwitter.async;
 
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.util.List;
 
@@ -21,11 +22,11 @@ public class RetrieveTweetsAsyncTask extends AsyncTask<String, Void, List<Tweet>
 
     @Override
     protected List<Tweet> doInBackground(String... params) {
-        /*
+
         if((params != null) && (params.length > 0)){
             return TwitterHelper.getTweetsOfUser(params[0]);
         }
-*/
+
         return null;
 
     }
@@ -34,10 +35,14 @@ public class RetrieveTweetsAsyncTask extends AsyncTask<String, Void, List<Tweet>
     @Override
     protected void onPostExecute(List<Tweet> tweets) {
         super.onPostExecute(tweets);
-        /*
+
         if((tweets != null) && (mListener != null)){
-                mListener.onTweetRetrieved(tweets);
-        }*/
+            for( Tweet t : tweets){
+                Log.i("Tweet", t.text);
+            }
+
+            mListener.onTweetRetrieved(tweets);
+        }
     }
 }
 

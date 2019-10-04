@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/thibault/Dropbox/CIR4/android/step0/step0-api28/WLTwitter/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-kn/values-kn.xml",
+            "outputFile": "/home/thibault/Dropbox/CIR4/android/step0-api28/android_M1/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-kn/values-kn.xml",
             "map": [
                 {
-                    "source": "/home/thibault/.gradle/caches/transforms-2/files-2.1/27a401fd77f9cd3e5d13129de8425443/support-compat-28.0.0-rc02/res/values-kn/values-kn.xml",
+                    "source": "/home/thibault/.gradle/caches/transforms-2/files-2.1/dd1cf78f22bdd94f550130b281f27c97/support-compat-28.0.0/res/values-kn/values-kn.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

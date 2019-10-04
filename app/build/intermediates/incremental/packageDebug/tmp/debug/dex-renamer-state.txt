@@ -1,4 +1,4 @@
-#Fri Sep 20 17:03:22 CEST 2019
-base.0=/home/thibault/Dropbox/CIR4/android/step0/step0-api28/WLTwitter/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+#Wed Oct 02 00:05:51 CEST 2019
+base.0=/home/thibault/Dropbox/CIR4/android/step0-api28/android_M1/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

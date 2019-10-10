@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +34,14 @@ public class TweetsFragment extends Fragment implements TweetChangeListner, Adap
 
     public TweetsFragment() {
         // Required empty public constructor
+    }
+
+    public static TweetsFragment newInstance(String url){
+        final TweetsFragment tweetsFragment = new TweetsFragment();
+        final Bundle arguments = new Bundle();
+        arguments.putString("URL", url);
+        tweetsFragment.setArguments(arguments);
+        return tweetsFragment;
     }
 
 

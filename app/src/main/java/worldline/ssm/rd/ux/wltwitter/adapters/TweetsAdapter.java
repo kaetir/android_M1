@@ -1,5 +1,6 @@
 package worldline.ssm.rd.ux.wltwitter.adapters;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,9 +8,11 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
+import worldline.ssm.rd.ux.wltwitter.MainActivity;
 import worldline.ssm.rd.ux.wltwitter.R;
 import worldline.ssm.rd.ux.wltwitter.WLTwitterApplication;
 import worldline.ssm.rd.ux.wltwitter.pojo.Tweet;
@@ -23,6 +26,8 @@ public class TweetsAdapter extends BaseAdapter {
         this.mTweets = mTweets;
         this.mInflater = LayoutInflater.from(WLTwitterApplication.getContext());
     }
+
+
 
     @Override
     public int getCount() {
@@ -90,8 +95,17 @@ public class TweetsAdapter extends BaseAdapter {
             name = (TextView) view.findViewById(R.id.username);
             alias = (TextView) view.findViewById(R.id.alias);
             text = (TextView) view.findViewById(R.id.tweetContent);
-            alias = (TextView) view.findViewById(R.id.tweetListItemButton);
+            button = (Button) view.findViewById(R.id.tweetListItemButton);
+
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(v.getContext(), "RT   :   " + text.getText().toString(), Toast.LENGTH_LONG).show();
+
+                }
+            });
         }
+
     }
 }
 

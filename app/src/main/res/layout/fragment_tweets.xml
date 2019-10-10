@@ -5,19 +5,10 @@
     tools:context=".fragments.TweetsFragment"
     android:id="@+id/frameLayout">
 
-
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
     <ListView
         android:id="@+id/tweetsListView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_conversion_absoluteHeight="731dp"
-        tools:layout_conversion_absoluteWidth="411dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:layout_height="wrap_content" />
 
 
 </FrameLayout>

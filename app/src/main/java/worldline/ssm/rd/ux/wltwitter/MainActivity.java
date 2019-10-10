@@ -47,7 +47,7 @@ public class MainActivity extends Activity implements TweetListener {
         }
 
         if(savedInstanceState == null){
-            getFragmentManager().beginTransaction().add(R.id.container, new TweetsFragment()).commit();
+            getFragmentManager().beginTransaction().add(R.id.container, TweetsFragment.newInstance("")).commit();
 
         }
 

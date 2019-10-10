@@ -1,60 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:id="@+id/tweetViewConstraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/tweetListItemImageView"
-        android:layout_width="94dp"
-        android:layout_height="106dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:contentDescription="@string/photodeprofile"
         android:foreground="@android:drawable/btn_dialog"
-        app:srcCompat="@android:drawable/btn_dialog"
-        tools:srcCompat="@android:drawable/btn_dialog" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/tweetListItemButton"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_below="@+id/tweetListItemImageView"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginRight="19dp"
-        android:layout_toStartOf="@+id/tweetContent"
-        android:layout_toLeftOf="@+id/tweetContent"
-        android:background="@drawable/retweet" />
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/retweet"
+        app:layout_constraintEnd_toStartOf="@+id/tweetContent"
+        app:layout_constraintRight_toLeftOf="@+id/tweetContent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tweetListItemImageView" />
 
     <TextView
         android:id="@+id/username"
-        android:layout_width="104dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="13dp"
-        android:layout_toEndOf="@+id/tweetListItemImageView"
-        android:layout_toRightOf="@+id/tweetListItemImageView"
-        android:text="@string/usernameViewListedTweet" />
+        android:layout_width="151dp"
+        android:layout_height="40dp"
+        android:text="@string/usernameViewListedTweet"
+        app:layout_constraintBottom_toBottomOf="@+id/tweetListItemImageView"
+        app:layout_constraintEnd_toStartOf="@+id/alias"
+        app:layout_constraintLeft_toRightOf="@+id/tweetListItemImageView"
+        app:layout_constraintStart_toEndOf="@+id/tweetListItemImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/alias"
-        android:layout_width="104dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="23dp"
-        android:layout_marginLeft="23dp"
-        android:layout_toEndOf="@+id/username"
-        android:layout_toRightOf="@+id/username"
-        android:text="@string/aliasTweetListView" />
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:text="@string/aliasTweetListView"
+        app:layout_constraintBottom_toBottomOf="@+id/tweetListItemImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/username"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tweetContent"
-        android:layout_width="232dp"
-        android:layout_height="88dp"
-        android:layout_below="@+id/username"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="11dp"
-        android:layout_toEndOf="@+id/tweetListItemImageView"
-        android:layout_toRightOf="@+id/tweetListItemImageView"
-        android:text="@string/contentTweetList" />
-</RelativeLayout>
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/contentTweetList"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/alias"
+        app:layout_constraintLeft_toRightOf="@+id/tweetListItemImageView"
+        app:layout_constraintStart_toEndOf="@+id/tweetListItemImageView"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+</android.support.constraint.ConstraintLayout>

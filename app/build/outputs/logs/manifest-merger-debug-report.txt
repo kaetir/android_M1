@@ -7,6 +7,7 @@ INJECTED from /home/thibault/Dropbox/CIR4/android/step0-api28/android_M1/app/src
 MERGED from [com.android.support:appcompat-v7:28.0.0-rc02] /home/thibault/.gradle/caches/transforms-2/files-2.1/aff1f8673cc5a354e11b0e7568c43755/appcompat-v7-28.0.0-rc02/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/thibault/.gradle/caches/transforms-2/files-2.1/c8390c608d9ebd3960e8c9af3469d9e0/constraint-layout-1.1.3/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:support-v4:28.0.0] /home/thibault/.gradle/caches/transforms-2/files-2.1/69ee415b12564ec70670df83c9fdfa6f/support-v4-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /home/thibault/.gradle/caches/transforms-2/files-2.1/967e8d778145ef395ac0dc868ec88b33/recyclerview-v7-28.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0-rc02] /home/thibault/.gradle/caches/transforms-2/files-2.1/f9eb4b9a98acadee2b6c6ea325550c05/animated-vector-drawable-28.0.0-rc02/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:28.0.0-rc02] /home/thibault/.gradle/caches/transforms-2/files-2.1/0a5d8dec5af0c8a7f7fb92a88d8a2199/support-vector-drawable-28.0.0-rc02/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:28.0.0] /home/thibault/.gradle/caches/transforms-2/files-2.1/59df75d251431efe4d450d41cc6b083b/support-fragment-28.0.0/AndroidManifest.xml:17:1-22:12
@@ -110,6 +111,8 @@ MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/thiba
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/thibault/.gradle/caches/transforms-2/files-2.1/c8390c608d9ebd3960e8c9af3469d9e0/constraint-layout-1.1.3/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:support-v4:28.0.0] /home/thibault/.gradle/caches/transforms-2/files-2.1/69ee415b12564ec70670df83c9fdfa6f/support-v4-28.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:28.0.0] /home/thibault/.gradle/caches/transforms-2/files-2.1/69ee415b12564ec70670df83c9fdfa6f/support-v4-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /home/thibault/.gradle/caches/transforms-2/files-2.1/967e8d778145ef395ac0dc868ec88b33/recyclerview-v7-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /home/thibault/.gradle/caches/transforms-2/files-2.1/967e8d778145ef395ac0dc868ec88b33/recyclerview-v7-28.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:28.0.0-rc02] /home/thibault/.gradle/caches/transforms-2/files-2.1/f9eb4b9a98acadee2b6c6ea325550c05/animated-vector-drawable-28.0.0-rc02/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:28.0.0-rc02] /home/thibault/.gradle/caches/transforms-2/files-2.1/f9eb4b9a98acadee2b6c6ea325550c05/animated-vector-drawable-28.0.0-rc02/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:28.0.0-rc02] /home/thibault/.gradle/caches/transforms-2/files-2.1/0a5d8dec5af0c8a7f7fb92a88d8a2199/support-vector-drawable-28.0.0-rc02/AndroidManifest.xml:20:5-44

@@ -24,4 +24,9 @@
 
 
     <string name="tweets_fragments">tweets</string>
+    <string name="usernameViewListedTweet">USERNAME</string>
+    <string name="aliasTweetListView">Alias</string>
+    <string name="contentTweetList">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet est quis felis posuere luctus nec ac eros. Sed vestibulum mi non pulvinar tempus. Curabitur tristique ipsum nec metus consectetur luctus. Donec porta malesuada congue. Proin dignissim, nibh facilisis amet. </string>
+    <string name="rt">RT</string>
+    <string name="photodeprofile">photoDeProfile</string>
 </resources>

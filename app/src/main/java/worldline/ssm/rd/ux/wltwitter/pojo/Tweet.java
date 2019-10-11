@@ -1,32 +1,39 @@
 package worldline.ssm.rd.ux.wltwitter.pojo;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Embedded;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 import com.google.gson.annotations.SerializedName;
 
+@Entity
 public class Tweet {
 
-	@SerializedName("created_at")
+	@ColumnInfo @SerializedName("created_at")
 	public String dateCreated;
 
-	@SerializedName("id")
+	@NonNull @PrimaryKey @SerializedName("id")
 	public String id;
 
-	@SerializedName("text")
+	@ColumnInfo @SerializedName("text")
 	public String text;
 
-	@SerializedName("in_reply_to_status_id")
+	@ColumnInfo @SerializedName("in_reply_to_status_id")
 	public String inReplyToStatusId;
 
-	@SerializedName("in_reply_to_user_id")
+	@ColumnInfo @SerializedName("in_reply_to_user_id")
 	public String inReplyToUserId;
 
-	@SerializedName("in_reply_to_screen_name")
+	@ColumnInfo @SerializedName("in_reply_to_screen_name")
 	public String inReplyToScreenName;
 
-	@SerializedName("user")
+	@Embedded @SerializedName("user")
 	public TwitterUser user;
 
 	@Override

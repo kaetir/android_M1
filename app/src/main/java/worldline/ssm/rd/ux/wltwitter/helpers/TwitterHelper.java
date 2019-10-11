@@ -60,7 +60,7 @@ public class TwitterHelper {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
-		return getFakeTweets();
+		return null;
 	}
 
 	public static Bitmap getTwitterUserImage(String imageUrl) throws Exception{

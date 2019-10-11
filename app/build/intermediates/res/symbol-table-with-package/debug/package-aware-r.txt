@@ -140,11 +140,6 @@ attr editTextStyle
 attr elevation
 attr emptyVisibility
 attr expandActivityOverflowButtonDrawable
-attr fastScrollEnabled
-attr fastScrollHorizontalThumbDrawable
-attr fastScrollHorizontalTrackDrawable
-attr fastScrollVerticalThumbDrawable
-attr fastScrollVerticalTrackDrawable
 attr firstBaselineToTopHeight
 attr font
 attr fontFamily
@@ -175,7 +170,6 @@ attr itemPadding
 attr keylines
 attr lastBaselineToBottomHeight
 attr layout
-attr layoutManager
 attr layout_anchor
 attr layout_anchorGravity
 attr layout_behavior
@@ -273,7 +267,6 @@ attr radioButtonStyle
 attr ratingBarStyle
 attr ratingBarStyleIndicator
 attr ratingBarStyleSmall
-attr reverseLayout
 attr searchHintIcon
 attr searchIcon
 attr searchViewStyle
@@ -285,13 +278,11 @@ attr showDividers
 attr showText
 attr showTitle
 attr singleChoiceItemLayout
-attr spanCount
 attr spinBars
 attr spinnerDropDownItemStyle
 attr spinnerStyle
 attr splitTrack
 attr srcCompat
-attr stackFromEnd
 attr state_above_anchor
 attr statusBarBackground
 attr subMenuArrow
@@ -399,6 +390,9 @@ color bright_foreground_material_dark
 color bright_foreground_material_light
 color button_material_dark
 color button_material_light
+color colorAccent
+color colorPrimary
+color colorPrimaryDark
 color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
@@ -407,6 +401,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color grey_twitter
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color material_blue_grey_800
@@ -424,6 +419,7 @@ color material_grey_900
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
+color orange_twitter
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -532,9 +528,6 @@ dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
-dimen fastscroll_default_thickness
-dimen fastscroll_margin
-dimen fastscroll_minimum_range
 dimen highlight_alpha_material_colored
 dimen highlight_alpha_material_dark
 dimen highlight_alpha_material_light
@@ -542,9 +535,6 @@ dimen hint_alpha_material_dark
 dimen hint_alpha_material_light
 dimen hint_pressed_alpha_material_dark
 dimen hint_pressed_alpha_material_light
-dimen item_touch_helper_max_drag_scroll_per_frame
-dimen item_touch_helper_swipe_escape_max_velocity
-dimen item_touch_helper_swipe_escape_velocity
 dimen login_center_panel_content_top_margin
 dimen login_center_panel_left_margin
 dimen login_center_panel_padding
@@ -579,6 +569,15 @@ dimen tooltip_precise_anchor_threshold
 dimen tooltip_vertical_padding
 dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
+dimen tweet_button_width
+dimen tweet_image_size
+dimen tweet_list_item_alias_width
+dimen tweet_list_item_image_size
+dimen tweet_list_item_margin
+dimen tweet_list_item_margin_between_views
+dimen tweet_list_item_padding
+dimen tweet_margin_between_views
+dimen tweet_padding
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
 drawable abc_btn_borderless_material
@@ -666,6 +665,8 @@ drawable abc_vector_test
 drawable blue_round_corners_background
 drawable blue_white_text_selector
 drawable ic_launcher
+drawable ic_launcher_background
+drawable ic_launcher_foreground
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -678,7 +679,6 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-drawable retweet
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable twitter
@@ -687,10 +687,8 @@ drawable white_round_corners_background
 id ALT
 id CTRL
 id FUNCTION
-id Login
-id LoginEditText
+id LoginButton
 id META
-id PasswordEditText
 id SHIFT
 id SYM
 id action0
@@ -717,7 +715,6 @@ id actions
 id activity_chooser_view_content
 id add
 id alertTitle
-id alias
 id all
 id always
 id async
@@ -725,7 +722,6 @@ id barrier
 id beginning
 id blocking
 id bottom
-id button
 id buttonPanel
 id cancel_action
 id center
@@ -756,7 +752,6 @@ id fill
 id fill_horizontal
 id fill_vertical
 id forever
-id frameLayout
 id gone
 id group_divider
 id groups
@@ -767,16 +762,15 @@ id icon_group
 id ifRoom
 id image
 id imageView
-id imageView5
 id info
 id invisible
 id italic
-id item_touch_helper_previous_elevation
 id left
 id line1
 id line3
 id listMode
 id list_item
+id loginEditText
 id media_actions
 id message
 id middle
@@ -790,6 +784,7 @@ id notification_main_column_container
 id packed
 id parent
 id parentPanel
+id passwordEditText
 id percent
 id progress_circular
 id progress_horizontal
@@ -836,25 +831,28 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
-id textView
-id textView2
-id textView3
-id textView4
 id time
 id title
 id titleDividerNoCustom
 id title_template
 id top
 id topPanel
-id tweetContent
+id tweetAliasTextView
+id tweetImageView
+id tweetListItemAliasTextView
 id tweetListItemButton
 id tweetListItemImageView
-id tweetViewConstraint
+id tweetListItemNameTextView
+id tweetListItemTweetTextView
+id tweetNameTextView
+id tweetReplyButton
+id tweetRetweetButton
+id tweetStarButton
+id tweetTextTextView
 id tweetsListView
 id uniform
 id up
 id useLogo
-id username
 id withText
 id wrap
 id wrap_content
@@ -892,8 +890,10 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_wltwitter
+layout fragment_tweet
 layout fragment_tweets
-layout login
+layout login_layout
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -909,19 +909,15 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
-layout profile
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
-layout tweet_layout
+layout tweet_listitem
 menu menu_main
 menu wltwitter
 mipmap ic_launcher
-string Age
-string CityOfBirth
-string Name
-string Status
+mipmap ic_launcher_round
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -963,29 +959,25 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string action_logout
 string action_settings
-string aliasTweetListView
 string app_name
-string contentTweetList
-string edit_profile
 string error_no_login
 string error_no_password
+string hello_blank_fragment
 string hello_world
 string login
 string loginHint
 string passwordHint
-string photodeprofile
-string profil_picture
-string rt
 string search_menu_title
 string status_bar_notification_info_overflow
-string tweets_fragments
-string usernameViewListedTweet
+string tweet_list_item_button_text
+string tweet_reply
+string tweet_retweet
+string tweet_star
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
 style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
-style AppBaseTheme
 style AppTheme
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
@@ -1371,7 +1363,6 @@ styleable MenuView android_windowAnimationStyle android_itemTextAppearance andro
 styleable PopupWindow android_popupBackground android_popupAnimationStyle overlapAnchor
 styleable PopupWindowBackgroundState state_above_anchor
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
-styleable RecyclerView android_orientation android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration

@@ -1,48 +1,36 @@
 package worldline.ssm.rd.ux.wltwitter.async;
 
-
-
 import android.os.AsyncTask;
 import android.util.Log;
 
 import java.util.List;
 
-import worldline.ssm.rd.ux.wltwitter.Interface.TweetChangeListner;
 import worldline.ssm.rd.ux.wltwitter.helpers.TwitterHelper;
+import worldline.ssm.rd.ux.wltwitter.interfaces.TweetChangeListener;
 import worldline.ssm.rd.ux.wltwitter.pojo.Tweet;
-
 
 public class RetrieveTweetsAsyncTask extends AsyncTask<String, Void, List<Tweet>> {
 
-    private TweetChangeListner mListener;
+    private TweetChangeListener mlistener;
 
-    public RetrieveTweetsAsyncTask(TweetChangeListner listner) {
-        mListener = listner;
+    public RetrieveTweetsAsyncTask(TweetChangeListener mlistener) {
+        this.mlistener = mlistener;
     }
 
     @Override
-    protected List<Tweet> doInBackground(String... params) {
-
-        if((params != null) && (params.length > 0)){
-            return TwitterHelper.getTweetsOfUser(params[0]);
+    protected List<Tweet> doInBackground(String... login) {
+        if((null != login ) && (login.length >0)){
+            return TwitterHelper.getTweetsOfUser(login[0]);
         }
-
         return null;
-
     }
 
 
     @Override
     protected void onPostExecute(List<Tweet> tweets) {
         super.onPostExecute(tweets);
+        if(mlistener!=null && tweets!=null)
+            mlistener.onTweetRetrieved(tweets);
 
-        if((tweets != null) && (mListener != null)){
-            for( Tweet t : tweets){
-                Log.i("Tweet", t.text);
-            }
-
-            mListener.onTweetRetrieved(tweets);
-        }
     }
 }
-

@@ -13,20 +13,17 @@
     <string name="login">Sign in</string>
     <string name="error_no_login">Empty login !</string>
     <string name="error_no_password">Empty password !</string>
-    <string name="action_settings">Menu</string>
+    <string name="action_settings">Title!</string>
 
-    <string name="Name">Name : John</string>
-    <string name="Age">Age : 42 ans</string>
-    <string name="CityOfBirth">City of birth : NYC</string>
-    <string name="Status">Status : First Android training today !</string>
-    <string name="profil_picture">Photo de profile</string>
-    <string name="edit_profile">edit</string>
+    <!-- TWEET LIST ITEM -->
+    <string name="tweet_list_item_button_text">RT</string>
 
+    <!-- TWEET -->
+    <string name="tweet_reply">reply</string>
+    <string name="tweet_retweet">retweet</string>
+    <string name="tweet_star">star</string>
 
-    <string name="tweets_fragments">tweets</string>
-    <string name="usernameViewListedTweet">USERNAME</string>
-    <string name="aliasTweetListView">Alias</string>
-    <string name="contentTweetList">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet est quis felis posuere luctus nec ac eros. Sed vestibulum mi non pulvinar tempus. Curabitur tristique ipsum nec metus consectetur luctus. Donec porta malesuada congue. Proin dignissim, nibh facilisis amet. </string>
-    <string name="rt">RT</string>
-    <string name="photodeprofile">photoDeProfile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

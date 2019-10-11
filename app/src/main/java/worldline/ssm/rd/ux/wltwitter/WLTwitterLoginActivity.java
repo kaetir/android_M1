@@ -1,61 +1,60 @@
 package worldline.ssm.rd.ux.wltwitter;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import worldline.ssm.rd.ux.wltwitter.utils.Constants;
 import worldline.ssm.rd.ux.wltwitter.utils.PreferenceUtils;
 
-public class WLTwitterLoginActivity extends Activity implements View.OnClickListener {
-    private EditText mLogin;
-    private EditText mPasswd;
+public class WLTwitterLoginActivity extends AppCompatActivity
+        implements View.OnClickListener {
 
-    public class Login{
-        public static final String EXTRA_LOGIN =  "extraLogin";
+    private EditText mLoginEdit;
+    private EditText mPasswordEdit;
+    @Override
+    protected void onCreate( Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.login_layout);
+
+        mLoginEdit = (EditText) findViewById(R.id.loginEditText);
+        mPasswordEdit =  findViewById(R.id.passwordEditText);
+
+        findViewById(R.id.LoginButton).setOnClickListener(this);
+
+        final String login = PreferenceUtils.getLogin();
+        if(!TextUtils.isEmpty(login))
+        startActivity(getHomeIntent(login));
     }
+
 
     @Override
     public void onClick(View v) {
-        if(TextUtils.isEmpty(mLogin.getText())){
-            Toast.makeText(this, "Empty login", Toast.LENGTH_SHORT).show();
+        if(TextUtils.isEmpty(mLoginEdit.getText()))
+        {
+            Toast.makeText(this,"EmptyLogin",Toast.LENGTH_SHORT)
+                    .show();
             return;
         }
-        if(TextUtils.isEmpty(mPasswd.getText())){
-            Toast.makeText(this, "Empty password", Toast.LENGTH_SHORT).show();
+        String login = mLoginEdit.getText().toString();
+        if(TextUtils.isEmpty(mPasswordEdit.getText()))
+        {
+            Toast.makeText(this,"EmptyPassword",Toast.LENGTH_SHORT)
+                    .show();
             return;
         }
-        PreferenceUtils.setLogin(mLogin.getText().toString());
-
-        startMainActivity(mLogin.getText().toString());
+        PreferenceUtils.setLogin(login);
+        startActivity(getHomeIntent(login));
     }
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
-
-        final String log = PreferenceUtils.getLogin();
-        if(!TextUtils.isEmpty(log))
-            startMainActivity(log);
-
-        mLogin  = (EditText) findViewById(R.id.LoginEditText);
-        mPasswd = (EditText) findViewById(R.id.PasswordEditText);
-
-        findViewById(R.id.Login).setOnClickListener(this);
+    private Intent getHomeIntent(String userName){
+        final Intent homeIntent = new Intent(this, WLTwitterActivity.class);
+        final Bundle extras = new Bundle();
+        extras.putString(Constants.Login.EXTRA_LOGIN, userName);
+        homeIntent.putExtras(extras);
+        return homeIntent;
     }
-
-
-    private void startMainActivity(String username){
-        Intent intent = new Intent(this, MainActivity.class);
-        Bundle extras = new Bundle();
-        extras.putString(Login.EXTRA_LOGIN, username);
-        intent.putExtras(extras);
-        startActivity(intent);
-    }
-
 }
